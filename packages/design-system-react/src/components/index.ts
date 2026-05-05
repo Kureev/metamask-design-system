@@ -103,6 +103,9 @@ export type { ModalFooterButtonProps, ModalFooterProps } from './ModalFooter';
 export { Modal, useModalContext } from './Modal';
 export type { ModalContextType, ModalProps } from './Modal';
 
+export { Popover, PopoverPosition, PopoverRole } from './Popover';
+export type { PopoverProps } from './Popover';
+
 export { Text } from './Text';
 export {
   TextVariant,
