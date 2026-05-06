@@ -3,6 +3,9 @@ name: Test Storybook
 on:
   workflow_call:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   test-storybook:
     name: Test Storybook (accessibility & stories)
