@@ -835,11 +835,11 @@ The extension `banner-alert` maps directly to `BannerAlert` in the design system
 
 To standardize severity vocabularies across components:
 
-| Before (Error/Default)                 | After (Danger/Neutral)                 | Notes     |
-| -------------------------------------- | -------------------------------------- | --------- |
-| `AvatarIconSeverity.Error` (`'error'`) | `AvatarIconSeverity.Danger` (`'danger'`)| renamed   |
-| `TagSeverity.Error` (`'error'`)        | `TagSeverity.Danger` (`'danger'`)       | renamed   |
-| Any legacy `default`-like severities   | Use `Neutral` (`'neutral'`)             | canonical |
+| Before (Error/Default)                 | After (Danger/Neutral)                   | Notes     |
+| -------------------------------------- | ---------------------------------------- | --------- |
+| `AvatarIconSeverity.Error` (`'error'`) | `AvatarIconSeverity.Danger` (`'danger'`) | renamed   |
+| `TagSeverity.Error` (`'error'`)        | `TagSeverity.Danger` (`'danger'`)        | renamed   |
+| Any legacy `default`-like severities   | Use `Neutral` (`'neutral'`)              | canonical |
 
 #### Migration Example
 
