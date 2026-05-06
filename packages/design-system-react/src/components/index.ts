@@ -100,6 +100,9 @@ export type { ModalOverlayProps } from './ModalOverlay';
 export { ModalBody } from './ModalBody';
 export type { ModalBodyProps } from './ModalBody';
 
+export { PopoverHeader } from './PopoverHeader';
+export type { PopoverHeaderProps } from './PopoverHeader';
+
 export { Text } from './Text';
 export {
   TextVariant,
