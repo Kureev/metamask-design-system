@@ -55,10 +55,9 @@ export const BannerBase: React.FC<BannerBaseProps> = ({
   const handleClosePress =
     onClose || closeButtonPropsOnPress
       ? (event: GestureResponderEvent) => {
-          if (onClose) {
-            onClose();
-            return;
-          }
+          // Invoke both handlers when provided to allow parent onClose
+          // and consumer-provided closeButtonProps.onPress to run.
+          onClose?.();
           closeButtonPropsOnPress?.(event);
         }
       : undefined;
