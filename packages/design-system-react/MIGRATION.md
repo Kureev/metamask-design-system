@@ -1711,20 +1711,20 @@ Refer to [General Extension Migration Guidance](#general-extension-migration-gui
 
 #### Import Path
 
-| Extension Pattern                                              | Design System Migration                                              |
-| -------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `import { SensitiveText } from '../../component-library'`      | `import { SensitiveText } from '@metamask/design-system-react'`      |
-| `import { SensitiveTextLength } from '../../component-library'` | `import { SensitiveTextLength } from '@metamask/design-system-react'` |
-| `import type { SensitiveTextProps } from '...'`                | `import type { SensitiveTextProps } from '@metamask/design-system-react'` |
+| Extension Pattern                                               | Design System Migration                                                   |
+| --------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `import { SensitiveText } from '../../component-library'`       | `import { SensitiveText } from '@metamask/design-system-react'`           |
+| `import { SensitiveTextLength } from '../../component-library'` | `import { SensitiveTextLength } from '@metamask/design-system-react'`     |
+| `import type { SensitiveTextProps } from '...'`                 | `import type { SensitiveTextProps } from '@metamask/design-system-react'` |
 
 #### Props
 
-| Extension Prop | Design System Prop | Change Type | Notes                                                                              |
-| -------------- | ------------------ | ----------- | ---------------------------------------------------------------------------------- |
-| `isHidden`     | `isHidden`         | unchanged   | Defaults to `false`.                                                               |
-| `length`       | `length`           | unchanged   | Accepts `SensitiveTextLength` or a custom numeric string (e.g. `"15"`).            |
-| `children`     | `children`         | unchanged   | The text content to display or hide.                                               |
-| `ref`          | removed            | removed     | The new component is a function component and does not forward a ref to the DOM.  |
+| Extension Prop | Design System Prop | Change Type | Notes                                                                            |
+| -------------- | ------------------ | ----------- | -------------------------------------------------------------------------------- |
+| `isHidden`     | `isHidden`         | unchanged   | Defaults to `false`.                                                             |
+| `length`       | `length`           | unchanged   | Accepts `SensitiveTextLength` or a custom numeric string (e.g. `"15"`).          |
+| `children`     | `children`         | unchanged   | The text content to display or hide.                                             |
+| `ref`          | removed            | removed     | The new component is a function component and does not forward a ref to the DOM. |
 
 All other `Text` props (`variant`, `color`, `fontWeight`, `className`, `style`, etc.) continue to be forwarded to the underlying `Text`.
 
@@ -1738,10 +1738,7 @@ All other `Text` props (`variant`, `color`, `fontWeight`, `className`, `style`, 
 ##### Before (Extension)
 
 ```tsx
-import {
-  SensitiveText,
-  SensitiveTextLength,
-} from '../../component-library';
+import { SensitiveText, SensitiveTextLength } from '../../component-library';
 
 <SensitiveText isHidden length={SensitiveTextLength.Medium}>
   $1,234.56
