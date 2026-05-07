@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- **BREAKING:** Simplified `BannerBase` close-button handling so `onClose` is the only behavioral close API; `closeButtonProps` now customizes the close `ButtonIcon` only and no longer accepts `onPress`. The close button is rendered only when `onClose` is provided. See [Migration Guide](./MIGRATION.md#from-version-0230-to-0x0).
+
 ## [0.23.0]
 
 ### Added
