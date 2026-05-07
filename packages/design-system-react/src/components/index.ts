@@ -103,6 +103,9 @@ export type { ModalFooterButtonProps, ModalFooterProps } from './ModalFooter';
 export { Modal, useModalContext } from './Modal';
 export type { ModalContextType, ModalProps } from './Modal';
 
+export { SensitiveText, SensitiveTextLength } from './SensitiveText';
+export type { SensitiveTextProps } from './SensitiveText';
+
 export { Text } from './Text';
 export {
   TextVariant,
