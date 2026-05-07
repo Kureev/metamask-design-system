@@ -120,8 +120,8 @@ export const BannerBase: React.FC<BannerBaseProps> = ({
           iconName={IconName.Close}
           size={ButtonIconSize.Sm}
           accessibilityLabel={closeButtonAccessibilityLabel}
-          onPress={onClose}
           {...resolvedCloseButtonProps}
+          onPress={onClose}
         />
       )}
     </Box>
