@@ -1,7 +1,11 @@
 import { ButtonBaseSize, IconName } from '@metamask/design-system-shared';
 import { useTailwind } from '@metamask/design-system-twrnc-preset';
-import { renderHook } from '@testing-library/react-hooks';
-import { render, fireEvent, waitFor } from '@testing-library/react-native';
+import {
+  fireEvent,
+  render,
+  renderHook,
+  waitFor,
+} from '@testing-library/react-native';
 import React from 'react';
 import { View, Text } from 'react-native';
 import * as ReactTestRenderer from 'react-test-renderer';
@@ -10,6 +14,13 @@ import { ButtonBase } from './ButtonBase';
 
 describe('ButtonBase', () => {
   const getTw = () => renderHook(() => useTailwind()).result.current;
+  const createRenderer = (element: React.ReactElement) => {
+    let tree!: ReactTestRenderer.ReactTestRenderer;
+    ReactTestRenderer.act(() => {
+      tree = ReactTestRenderer.create(element);
+    });
+    return tree;
+  };
 
   // Helper functions to avoid conditionals in tests
   const createFunctionStyle =
@@ -66,7 +77,7 @@ describe('ButtonBase', () => {
     const twClassNameFn = (pressed: boolean) =>
       pressed ? 'bg-pressed' : 'bg-default';
 
-    const tree = ReactTestRenderer.create(
+    const tree = createRenderer(
       <ButtonBase twClassName={twClassNameFn}>Function ClassName</ButtonBase>,
     );
 
@@ -226,7 +237,7 @@ describe('ButtonBase', () => {
   });
 
   it('renders custom accessories in loading state', () => {
-    const tree = ReactTestRenderer.create(
+    const tree = createRenderer(
       <ButtonBase
         isLoading
         startAccessory={<View testID="sa" />}
@@ -258,7 +269,7 @@ describe('ButtonBase', () => {
   });
 
   it('hides non-string React element children during loading', () => {
-    const tree = ReactTestRenderer.create(
+    const tree = createRenderer(
       <ButtonBase isLoading testID="btn">
         <View testID="custom-child">
           <View testID="nested-content" />
@@ -281,7 +292,7 @@ describe('ButtonBase', () => {
   it('applies function-based style prop correctly', () => {
     const functionStyle = createFunctionStyle();
 
-    const tree = ReactTestRenderer.create(
+    const tree = createRenderer(
       <ButtonBase style={functionStyle}>Function Style</ButtonBase>,
     );
 
@@ -321,7 +332,7 @@ describe('ButtonBase', () => {
   it('handles function-based style prop returning falsy value', () => {
     const falsyStyleFunction = createFalsyStyleFunction();
 
-    const tree = ReactTestRenderer.create(
+    const tree = createRenderer(
       <ButtonBase style={falsyStyleFunction}>Falsy Style</ButtonBase>,
     );
 
@@ -352,7 +363,7 @@ describe('ButtonBase', () => {
   it('applies static style prop correctly', () => {
     const staticStyle = { borderWidth: 3, borderColor: 'green' };
 
-    const tree = ReactTestRenderer.create(
+    const tree = createRenderer(
       <ButtonBase style={staticStyle}>Static Style</ButtonBase>,
     );
 
@@ -387,7 +398,7 @@ describe('ButtonBase', () => {
     const iconClassNameFn = (pressed: boolean) =>
       pressed ? 'icon-pressed' : 'icon-default';
 
-    const tree = ReactTestRenderer.create(
+    const tree = createRenderer(
       <ButtonBase
         startIconName={IconName.Add}
         startIconProps={{ testID: 'start-icon' }}
@@ -420,7 +431,7 @@ describe('ButtonBase', () => {
     const textClassNameFn = (pressed: boolean) =>
       pressed ? 'text-pressed' : 'text-default';
 
-    const tree = ReactTestRenderer.create(
+    const tree = createRenderer(
       <ButtonBase textClassName={textClassNameFn}>
         Text with className
       </ButtonBase>,
@@ -446,7 +457,7 @@ describe('ButtonBase', () => {
     const textClassNameFn = (pressed: boolean) =>
       pressed ? 'text-pressed' : 'text-default';
 
-    const tree = ReactTestRenderer.create(
+    const tree = createRenderer(
       <ButtonBase
         isLoading
         loadingText="Loading"
@@ -477,7 +488,7 @@ describe('ButtonBase', () => {
     const iconClassNameFn = (pressed: boolean) =>
       pressed ? 'icon-pressed' : 'icon-default';
 
-    const tree = ReactTestRenderer.create(
+    const tree = createRenderer(
       <ButtonBase
         isLoading
         startIconName={IconName.Add}
@@ -508,7 +519,7 @@ describe('ButtonBase', () => {
   });
 
   it('renders icons without iconClassName when not provided', () => {
-    const tree = ReactTestRenderer.create(
+    const tree = createRenderer(
       <ButtonBase startIconName={IconName.Add} endIconName={IconName.Close}>
         No Icon Classes
       </ButtonBase>,

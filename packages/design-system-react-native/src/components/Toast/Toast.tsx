@@ -11,7 +11,7 @@ import type { RefObject } from 'react';
 import type { ToastOptions, ToastProps, ToastRef } from './Toast.types';
 import { ToastView } from './ToastView';
 
-let registeredRef: RefObject<ToastRef> | null = null;
+let registeredRef: RefObject<ToastRef | null> | null = null;
 
 const assertRegisteredRef = (method: string): ToastRef => {
   if (!registeredRef?.current) {

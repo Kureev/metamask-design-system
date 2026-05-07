@@ -86,7 +86,7 @@ jest.mock('../AvatarIcon', () => {
 
 // Helper to show toast and wait for render.
 const showToastAndWait = async (
-  toastRef: React.RefObject<ToastRef>,
+  toastRef: React.RefObject<ToastRef | null>,
   options: ToastOptions,
 ) => {
   await act(async () => {
@@ -96,7 +96,7 @@ const showToastAndWait = async (
 };
 
 describe('Toast', () => {
-  let toastRef: React.RefObject<ToastRef>;
+  let toastRef: React.RefObject<ToastRef | null>;
 
   beforeEach(() => {
     toastRef = createRef<ToastRef>();
