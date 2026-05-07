@@ -82,14 +82,10 @@ export const Toast: React.FC<ToastProps> = ({
       closeButtonProps={{
         accessibilityLabel: 'Close toast',
         ...closeButtonProps,
-        onPress: (event) => {
-          onClose?.();
-          closeButtonProps?.onPress?.(event);
-        },
       }}
       description={description}
       descriptionProps={descriptionProps}
-      onClose={undefined}
+      onClose={onClose}
       startAccessory={renderSeverityAccessory({
         iconAlertProps,
         severity,
