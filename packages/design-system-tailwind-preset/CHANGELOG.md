@@ -11,7 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Added Tailwind utilities used by `ModalContent` and `Skeleton` when migrating extension screens to the design system ([#1139](https://github.com/MetaMask/metamask-design-system/pull/1139), [#1146](https://github.com/MetaMask/metamask-design-system/pull/1146))
+- Added `animate-slide-up` with a `slide-up` keyframe so dialogs can use the same entrance motion as design system `ModalContent` (translate up 24px while fading in, 400ms easing) ([#1139](https://github.com/MetaMask/metamask-design-system/pull/1139))
+- Added `animate-skeleton-pulse` with a `skeleton-pulse` keyframe for loading placeholders, matching the `Skeleton` component ([#1146](https://github.com/MetaMask/metamask-design-system/pull/1146))
 
 ## [0.7.0]
 
