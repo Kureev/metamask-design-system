@@ -9,12 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.17.0]
 
-### Uncategorized
+### Added
 
-- feat(icons): add ListArrow icon ([#1161](https://github.com/MetaMask/metamask-design-system/pull/1161))
-- fix(icons): update musd.svg with combined path element ([#1163](https://github.com/MetaMask/metamask-design-system/pull/1163))
-- feat(icons): add Musd and MusdFilled icons ([#1162](https://github.com/MetaMask/metamask-design-system/pull/1162))
-- feat(icons): update candlestick and add group, pie-chart, predictions icons ([#1157](https://github.com/MetaMask/metamask-design-system/pull/1157))
+- Extended the shared icon set with `ListArrow`, `Musd`, `MusdFilled`, `Group`, `PieChart`, and `Predictions`, and updated the `Candlestick` glyph ([#1157](https://github.com/MetaMask/metamask-design-system/pull/1157), [#1161](https://github.com/MetaMask/metamask-design-system/pull/1161), [#1162](https://github.com/MetaMask/metamask-design-system/pull/1162))
+
+### Fixed
+
+- Corrected the `Musd` icon source so the asset uses a single combined path ([#1163](https://github.com/MetaMask/metamask-design-system/pull/1163))
 
 ## [0.16.0]
 

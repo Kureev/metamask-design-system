@@ -9,10 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.8.0]
 
-### Uncategorized
+### Added
 
-- [4/N] feat: `ModalContent` migration (extension) ([#1139](https://github.com/MetaMask/metamask-design-system/pull/1139))
-- feat: `Skeleton` migration (extension) ([#1146](https://github.com/MetaMask/metamask-design-system/pull/1146))
+- Added Tailwind utilities used by `ModalContent` and `Skeleton` when migrating extension screens to the design system ([#1139](https://github.com/MetaMask/metamask-design-system/pull/1139), [#1146](https://github.com/MetaMask/metamask-design-system/pull/1146))
 
 ## [0.7.0]
 
